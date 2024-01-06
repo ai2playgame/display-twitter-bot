@@ -1,8 +1,7 @@
 import discord
 import re
 import os
-
-TOKEN = os.getenv('DISCORD_BOT_TOKEN')
+from keep_alive import keep_alive
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client(intents=discord.Intents.all())
@@ -30,5 +29,9 @@ async def on_message(message):
         reply_text = '\n'.join(converted_urls)
         await message.channel.send(reply_text)
 
+
+# Webサーバーの立ち上げ
+keep_alive()
 # Botの起動とDiscordサーバーへの接続
+TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 client.run(TOKEN)
