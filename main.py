@@ -6,7 +6,7 @@ from keep_alive import keep_alive
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
 # 接続に必要なオブジェクトを生成
-client = discord.Client(intents=discord.Intents.default())
+client = discord.Client(intents=discord.Intents.all())
 
 def convert_url(url):
     """ URLをvxtwitter.comに変換する """
