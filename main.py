@@ -1,7 +1,6 @@
 import discord
 import re
 import os
-from keep_alive import keep_alive
 
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
@@ -32,5 +31,4 @@ async def on_message(message):
         await message.channel.send(reply_text)
 
 # Botの起動とDiscordサーバーへの接続
-keep_alive()
 client.run(TOKEN)
